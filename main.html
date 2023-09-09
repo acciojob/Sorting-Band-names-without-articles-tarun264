@@ -53,7 +53,9 @@
 
 		for(let i=0;i<touristSpots.length;i++){
 			let articlelessItem= touristSpots[i].replace(regexp,"").trim();
+			articlelessItem=articlelessItem.replace(/  /g," ");  // remove two spaces with a single space
 			articleless.push(articlelessItem);
+			
 			mp[articlelessItem]=touristSpots[i];
 		}
 		articleless.sort();
