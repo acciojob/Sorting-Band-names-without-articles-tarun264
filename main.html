@@ -46,15 +46,24 @@
     <script type="text/javascript" src="./script.js">
 		let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
 
-		let regexp=/\ba\b|\ban\b|\bthe\b/g;....
+		let regexp=/\ba\b|\ban\b|\bthe\b/gi;
 		let articleless=[];
+		let mp=[];
+		
 
 		for(let i=0;i<touristSpots.length;i++){
-			let articlelessItem= arr[i].replace(regexp,"").trim();
+			let articlelessItem= touristSpots[i].replace(regexp,"").trim();
 			articleless.push(articlelessItem);
+			mp[articlelessItem]=touristSpots[i];
 		}
-		arr.sort(articleless);
-		console.log(articleless);
+		articleless.sort();
+		
+		let ans=[];
+		
+		for(let i of articleless){
+		    ans.push(mp[i]);
+		}
+		console.log(ans);
 		
 	</script>
   </body>
