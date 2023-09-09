@@ -43,6 +43,19 @@
 
     <ul></ul>
 
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./script.js">
+		let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
+
+		let regexp=/\ba\b|\ban\b|\bthe\b/g;
+		let articleless=[];
+
+		for(let i=0;i<touristSpots.length;i++){
+			let articlelessItem= arr[i].replace(regexp,"").trim();
+			articleless.push(articlelessItem);
+		}
+		arr.sort(articleless);
+		console.log(articleless);
+		
+	</script>
   </body>
 </html>
